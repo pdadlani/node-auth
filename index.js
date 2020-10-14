@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 
 // Import routes
 const authRoute = require('./routes/auth');
+const imageRoute = require('./routes/images');
 
 dotenv.config();
 
@@ -20,6 +21,7 @@ app.use(express.json());
 
 // Route Middlewares
 app.use('/api/user', authRoute);
+app.use('/api/images', imageRoute);
 
 app.listen(5000, () => {
   console.log('\nServer up and running\n');
