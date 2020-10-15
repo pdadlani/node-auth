@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
+const AWS = require('aws-sdk');
 
 // Import routes
 const authRoute = require('./routes/auth');
@@ -15,6 +16,7 @@ mongoose.connect(
   { useUnifiedTopology: true },
   () => console.log('connected to db!')
 );
+
 
 // Middleware 
 app.use(express.json());
